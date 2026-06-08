@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RWD 響應式網站</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, "Microsoft JhengHei", sans-serif;
+            color: #000;
+            background: #fff;
+            line-height: 1.6;
+        }
+
+        .wrap {
+            width: 100%;
+            min-height: 100vh;
+            padding: 45px 20px;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .wda-logo {
+            width: 245px;
+            max-width: 75%;
+            display: block;
+            margin: 0 auto 5px;
+        }
+
+        h1 {
+            font-size: 36px;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            margin-top: 18px;
+            font-size: 28px;
+            font-weight: bold;
+            line-height: 1.3;
+        }
+
+        .info {
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+            justify-content: center;
+            gap: 0 22px;
+            font-size: 19px;
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid #777;
+            margin: 38px 0;
+        }
+
+        .course {
+            max-width: 520px;
+            margin: 0 auto;
+        }
+
+        .course img {
+            width: 230px;
+            display: block;
+            margin: 0 auto 28px;
+        }
+
+        .course h2 {
+            font-size: 30px;
+            line-height: 1.2;
+        }
+
+        .course p {
+            font-size: 20px;
+            text-align: justify;
+        }
+
+        .desktop-only {
+            display: block;
+        }
+
+        .ray {
+            display: none;
+        }
+
+        /* 視窗變寬後，改成 456.png 的放射狀版面 */
+        @media (min-width: 900px) {
+            .wrap {
+                height: 100vh;
+                min-height: 720px;
+                padding: 0;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .center {
+                width: 380px;
+                position: absolute;
+                left: 50%;
+                top: 52%;
+                transform: translate(-50%, -50%);
+                z-index: 2;
+            }
+
+            .wda-logo {
+                width: 320px;
+                max-width: 100%;
+            }
+
+            h1 {
+                font-size: 40px;
+            }
+
+            .subtitle {
+                margin-top: 0;
+                font-size: 28px;
+            }
+
+            .info {
+                font-size: 18px;
+                gap: 0 22px;
+            }
+
+            hr,
+            .course p {
+                display: none;
+            }
+
+            .desktop-only {
+                display: block;
+            }
+
+            .course {
+                width: 230px;
+                margin: 0;
+                position: absolute;
+                text-align: center;
+                z-index: 2;
+            }
+
+            .course img {
+                width: 180px;
+                max-height: 220px;
+                object-fit: contain;
+                margin-bottom: 8px;
+            }
+
+            .course h2 {
+                font-size: 28px;
+            }
+
+            .ray {
+                display: block;
+                height: 3px;
+                background: #ddd;
+                position: absolute;
+                z-index: 1;
+                transform-origin: left center;
+            }
+
+            .ray-html {
+                width: 28%;
+                left: 15.5%;
+                top: 22%;
+                transform: rotate(16deg);
+            }
+
+            .ray-css {
+                width: 13%;
+                left: 36%;
+                top: 15%;
+                transform: rotate(44deg);
+            }
+
+            .ray-js {
+                width: 20%;
+                left: 21%;
+                top: 52%;
+                transform: rotate(-11deg);
+            }
+
+            .ray-jq {
+                width: 10%;
+                left: 34.5%;
+                top: 67%;
+                transform: rotate(-35deg);
+            }
+
+            .ray-bs {
+                width: 18%;
+                left: 58.5%;
+                top: 35%;
+                transform: rotate(-30deg);
+            }
+
+            .ray-sass {
+                width: 26%;
+                left: 60%;
+                top: 45%;
+                transform: rotate(-12deg);
+            }
+
+            .ray-vue {
+                width: 20%;
+                left: 60%;
+                top: 54%;
+                transform: rotate(22deg);
+            }
+
+            .html {
+                left: 5%;
+                top: 7%;
+            }
+
+            .css {
+                left: 27%;
+                top: 2%;
+            }
+
+            .js {
+                left: 10%;
+                top: 46%;
+            }
+
+            .jq {
+                left: 24%;
+                top: 67%;
+            }
+
+            .bs {
+                right: 15%;
+                top: 7%;
+            }
+
+            .sass {
+                right: 2%;
+                top: 28%;
+            }
+
+            .vue {
+                right: 11%;
+                top: 62%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="wrap">
+        <span class="ray ray-html"></span>
+        <span class="ray ray-css"></span>
+        <span class="ray ray-js"></span>
+        <span class="ray ray-jq"></span>
+        <span class="ray ray-bs"></span>
+        <span class="ray ray-sass"></span>
+        <span class="ray ray-vue"></span>
+
+        <section class="center">
+            <img class="wda-logo" src="images/wda.png" alt="WDA">
+            <h1>泰山職訓局</h1>
+            <div class="subtitle">從零開始的網頁設計課程</div>
+            <ul class="info">
+                <li>轉職網頁開發人員</li>
+                <li>掌握就業必備職能</li>
+                <li>由淺入深學習技術</li>
+                <li>強化職場的競爭力</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section class="course html">
+            <img src="images/html.png" alt="HTML5">
+            <h2>Html</h2>
+            <p>
+                超文本標記語言（英語：HyperText Markup Language，簡稱：HTML）是一種用於建立網頁的標準標記語言。
+                HTML 是網頁最基礎的技術之一，常與 CSS、JavaScript 一起用來製作網站、網頁應用程式以及行動應用程式的使用者介面。
+                瀏覽器會讀取 HTML 檔案，並將內容呈現成我們看到的網頁畫面；它主要負責描述網站的結構，而不是用來執行程式邏輯。
+            </p>
+        </section>
+
+        <hr>
+
+        <section class="course css">
+            <img src="images/css.png" alt="CSS3">
+            <h2>CSS3</h2>
+            <p>
+                階層式樣式表（英語：Cascading Style Sheets，縮寫：CSS）是一種用來替 HTML 或 XML 文件加入樣式的語言。
+                它可以控制字型、顏色、間距、排版和畫面位置，讓原本只有結構的網頁變得更美觀。
+                CSS3 是現代網頁設計常用的樣式技術，大多數瀏覽器都能支援。
+            </p>
+        </section>
+
+        <hr>
+
+        <section class="course js desktop-only">
+            <img src="images/js.png" alt="JavaScript">
+            <h2>JavaScript</h2>
+            <p>
+                JavaScript（通常縮寫為 JS）是一門高階、直譯式的程式語言，常用於網頁中製作互動效果。
+                它可以操作文字、陣列、日期和網頁元素，也能透過瀏覽器環境處理使用者的點擊、輸入與畫面變化。
+                現在大多數網站都會使用 JavaScript，並且受到 Chrome、Firefox、Safari、Opera 等主流瀏覽器支援。
+            </p>
+        </section>
+
+        <hr>
+
+        <section class="course jq desktop-only">
+            <img src="images/jq.png" alt="jQuery">
+            <h2>jQuery</h2>
+            <p>
+                jQuery 是一套跨瀏覽器的 JavaScript 函式庫，用來簡化 HTML 與 JavaScript 之間的操作。
+                它能讓選取 DOM 元素、處理事件、製作動畫效果，以及開發 Ajax 程式變得更容易。
+                jQuery 也提供建立外掛的能力，讓開發者可以更快速地做出動態網頁與網路應用程式。
+            </p>
+        </section>
+
+        <hr>
+
+        <section class="course bs desktop-only">
+            <img src="images/bs.png" alt="Bootstrap">
+            <h2>Bootstrap</h2>
+            <p>
+                Bootstrap 是一組用於網站和網路應用程式開發的開源前端框架，包含 HTML、CSS 與 JavaScript 的設計工具。
+                它提供字體排印、表單、按鈕、導覽列，以及許多常見的網頁介面元件。
+                Bootstrap 的目的，是讓動態網頁和 Web 應用程式的開發更快速，也更容易做出響應式版面。
+            </p>
+        </section>
+
+        <hr>
+
+        <section class="course sass desktop-only">
+            <img src="images/sass.png" alt="Sass">
+            <h2>Sass</h2>
+            <p>
+                Sass（英文全稱：Syntactically Awesome Stylesheets）是一種層疊樣式表語言，最初由 Hampton Catlin 設計，後續由 Natalie Weizenbaum
+                等人開發。
+                它可以把 SassScript 轉換成 CSS，讓設計者使用變數、巢狀、混入與繼承等方式撰寫樣式。
+                Sass 常見的副檔名有 .sass 與 .scss，適合用來管理較大型網站的 CSS。
+            </p>
+        </section>
+
+        <hr>
+
+        <section class="course vue desktop-only">
+            <img src="images/vue.png" alt="Vue.js">
+            <h2>Vue.js</h2>
+            <p>
+                Vue.js（簡稱 Vue）是一個用於建立使用者介面的開源前端 JavaScript 框架，也能用來製作單頁式應用程式。
+                Vue.js 由尤雨溪建立，並由他和核心團隊共同維護。
+                它重視畫面層的組織與簡化，能透過元件和資料更新，讓網頁介面更容易開發與維護。
+            </p>
+        </section>
+    </main>
+</body>
+
+</html>
